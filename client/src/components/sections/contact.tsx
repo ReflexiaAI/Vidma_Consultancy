@@ -100,31 +100,31 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl lg:text-6xl font-light text-charcoal mb-8 tracking-tight leading-tight">
-              Ready to Transform Your 
-              <span className="font-normal text-bronze"> Legal Strategy?</span>
+              Ready to Simplify Your 
+              <span className="font-normal text-bronze"> Legal Processes?</span>
             </h2>
             <p className="text-lg text-text-light mb-12 leading-relaxed font-light">
-              Join industry leaders who trust us for their most critical legal challenges.
+              Tell us about what you're looking for, and we will get back to you soon with solutions and ideas.
             </p>
 
             <div className="space-y-8 mb-12">
               {[
                 {
                   icon: Phone,
-                  title: "24/7 Consultation Hotline",
-                  description: "+1 (555) 123-LEGAL",
+                  title: "Consultation Services",
+                  description: "Contact us for legal consultation",
                   color: "bg-bronze",
                 },
                 {
                   icon: Mail,
-                  title: "Strategic Partnerships",
-                  description: "partners@legalconsultpro.com",
+                  title: "Business Inquiries",
+                  description: "info@vidmaconsulting.com",
                   color: "bg-teal",
                 },
                 {
                   icon: MapPin,
-                  title: "Global Headquarters",
-                  description: "Manhattan Financial District, NY",
+                  title: "Professional Services",
+                  description: "Technology-enabled legal solutions",
                   color: "bg-navy",
                 },
               ].map((contact, index) => (
@@ -164,13 +164,13 @@ export default function Contact() {
                   <Calendar className="text-white text-sm" />
                 </div>
                 <div>
-                  <div className="font-medium text-charcoal text-sm">Free Strategic Assessment</div>
-                  <div className="text-xs text-text-light">45-minute consultation with senior partner</div>
+                  <div className="font-medium text-charcoal text-sm">Professional Consultation</div>
+                  <div className="text-xs text-text-light">Expert legal and business advisory services</div>
                 </div>
               </div>
               <div className="text-xs text-bronze flex items-center">
                 <CheckCircle size={10} className="mr-1" />
-                Usually books out 2-3 weeks in advance
+                Quality services with highest integrity
               </div>
             </motion.div>
           </motion.div>
@@ -183,7 +183,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-light text-charcoal mb-8 tracking-tight">Schedule Strategic Consultation</h3>
+            <h3 className="text-2xl font-light text-charcoal mb-8 tracking-tight">Contact Us</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -305,7 +305,7 @@ export default function Contact() {
                   className="mt-1"
                 />
                 <Label htmlFor="terms" className="text-sm text-grey-secondary leading-relaxed">
-                  I agree to receive communications about LegalConsult Pro services and understand that consultation details will remain confidential under attorney-client privilege.
+                  I agree to receive communications about Vidma Consulting Group services and understand that consultation details will remain confidential.
                 </Label>
               </div>
 
@@ -320,7 +320,7 @@ export default function Contact() {
                   ) : (
                     <>
                       <Calendar className="mr-2" size={18} />
-                      Schedule Free Consultation
+                      Submit Request
                     </>
                   )}
                 </Button>
@@ -328,7 +328,7 @@ export default function Contact() {
 
               <div className="text-center text-sm text-grey-secondary flex items-center justify-center">
                 <Lock className="mr-1" size={16} />
-                All communications are protected by attorney-client privilege
+                All communications are kept strictly confidential
               </div>
             </form>
           </motion.div>

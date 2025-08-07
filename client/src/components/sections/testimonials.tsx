@@ -3,19 +3,19 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    content: "LegalConsult Pro transformed our M&A strategy and saved us millions in potential compliance issues. Their expertise is unmatched in the industry.",
+    content: "Vidma Consulting Group's contract management system streamlined our legal processes and improved our compliance monitoring significantly.",
     author: "James Mitchell",
     title: "CEO, TechCorp Industries",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
   },
   {
-    content: "The international expansion legal framework they created allowed us to enter 12 new markets seamlessly. Outstanding strategic thinking.",
+    content: "Their legal research services and multi-jurisdictional expertise helped us navigate complex regulatory requirements with confidence.",
     author: "Emma Thompson",
     title: "CFO, Global Retail Corp",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
   },
   {
-    content: "Their proactive compliance monitoring system prevented potential regulatory issues that could have cost us our IPO timeline. Exceptional foresight.",
+    content: "The IP services and patent support provided by Vidma Consulting Group protected our innovations and gave us competitive advantage.",
     author: "Robert Kim",
     title: "Founder, FinTech Solutions",
     image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",

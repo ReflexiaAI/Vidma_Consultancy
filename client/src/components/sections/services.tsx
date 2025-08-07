@@ -1,43 +1,43 @@
 import { motion, useInView } from "framer-motion";
-import { Building, Shield, Handshake, Globe, TrendingUp, Settings, ArrowRight, Zap } from "lucide-react";
+import { FileText, Scale, Search, Copyright, TrendingUp, Leaf, ArrowRight, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
 
 const services = [
   {
-    icon: Building,
-    title: "Corporate Governance",
-    description: "Strategic leadership in corporate law, M&A transactions, and regulatory frameworks.",
+    icon: FileText,
+    title: "Contract Lifecycle Management",
+    description: "Comprehensive contract creation, negotiation, and management with high-end software solutions tailored to your needs.",
     color: "bg-charcoal",
   },
   {
-    icon: Shield,
-    title: "Risk & Compliance",
-    description: "Proactive risk management and comprehensive compliance strategies.",
+    icon: Scale,
+    title: "Litigation Support",
+    description: "Strategic legal action response with trained teams assisting general counsels in managing court proceedings.",
     color: "bg-charcoal",
   },
   {
-    icon: Handshake,
-    title: "Contract Strategy",
-    description: "Expert negotiation and contract optimization for business growth.",
+    icon: Search,
+    title: "Legal Research",
+    description: "Multi-jurisdictional legal research services using online libraries, offline resources, and expert networks.",
     color: "bg-charcoal",
   },
   {
-    icon: Globe,
-    title: "Global Expansion",
-    description: "International legal frameworks for seamless market entry.",
+    icon: Copyright,
+    title: "Intellectual Property Services",
+    description: "Full range of IP services including patents, trademarks, copyrights, and IP litigation support.",
     color: "bg-charcoal",
   },
   {
     icon: TrendingUp,
-    title: "Financial Regulation",
-    description: "Securities, compliance, and investment structuring expertise.",
+    title: "Financial & Investment Research",
+    description: "In-depth analysis and research for equity research, valuation, and investment analysis of firms.",
     color: "bg-charcoal",
   },
   {
-    icon: Settings,
-    title: "Technology Law",
-    description: "IP protection and digital transformation legal guidance.",
+    icon: Leaf,
+    title: "Sustainability Solutions",
+    description: "ESG advisory services and sustainability reporting to help organizations integrate sustainable practices.",
     color: "bg-charcoal",
   },
 ];
@@ -89,10 +89,10 @@ export default function Services() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl lg:text-6xl font-light text-charcoal mb-8 tracking-tight">
-            Legal <span className="font-normal">Solutions</span>
+            Our <span className="font-normal">Services</span>
           </h2>
           <p className="text-lg text-text-light max-w-2xl mx-auto font-light leading-relaxed">
-            Comprehensive legal consulting designed for modern business challenges.
+            We simplify your legal and business processes with technology-enabled solutions.
           </p>
         </motion.div>
 
@@ -171,14 +171,14 @@ export default function Services() {
           viewport={{ once: true }}
         >
           <div className="bg-soft-grey rounded-3xl p-12 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-light text-charcoal mb-4 tracking-tight">Custom Legal Strategy</h3>
-            <p className="text-text-light mb-8 font-light leading-relaxed max-w-2xl mx-auto">Our expert team develops tailored solutions for complex business challenges.</p>
+            <h3 className="text-3xl font-light text-charcoal mb-4 tracking-tight">Ready to Get Started?</h3>
+            <p className="text-text-light mb-8 font-light leading-relaxed max-w-2xl mx-auto">Each firm's situation and needs are unique. Tell us about what you're looking for, and we'll get back to you with solutions.</p>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button
                 onClick={scrollToContact}
                 className="bg-charcoal hover:bg-charcoal/90 text-white px-8 py-3 rounded-2xl font-medium transition-all duration-200"
               >
-                Start Conversation
+                Contact Us Today
               </Button>
             </motion.div>
           </div>

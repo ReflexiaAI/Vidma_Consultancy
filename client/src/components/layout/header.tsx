@@ -43,7 +43,7 @@ export default function Header() {
             <div className="w-8 h-8 bg-charcoal rounded-md flex items-center justify-center">
               <Scale className="text-white text-lg" />
             </div>
-            <span className="text-xl font-medium text-charcoal tracking-tight">LegalConsult Pro</span>
+            <span className="text-xl font-medium text-charcoal tracking-tight">Vidma Consulting Group</span>
           </motion.div>
 
           {/* Desktop Navigation */}

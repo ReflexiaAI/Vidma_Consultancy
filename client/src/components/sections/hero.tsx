@@ -72,7 +72,7 @@ export default function Hero() {
               >
                 <Sparkles className="w-4 h-4 text-bronze" />
               </motion.div>
-              <span className="text-charcoal font-normal text-sm tracking-wide">Industry Leader in Legal Innovation</span>
+              <span className="text-charcoal font-normal text-sm tracking-wide">Next Generation Technology Enabled Legal Consultancy</span>
             </motion.div>
 
             <motion.h1
@@ -84,7 +84,7 @@ export default function Hero() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
               >
-                Legal Excellence
+                Vidma Consulting
               </motion.span>
               <br />
               <motion.span 
@@ -97,7 +97,7 @@ export default function Hero() {
                   transition: { type: "spring", stiffness: 300 }
                 }}
               >
-                Reimagined
+                Group LLP
               </motion.span>
             </motion.h1>
 
@@ -110,7 +110,7 @@ export default function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.8 }}
               >
-                Transforming legal consulting through innovation, precision, and strategic thinking. We help visionary companies navigate complexity with confidence.
+                A next generation technology-enabled legal and business consultancy providing specialized services in contract management, intellectual property protection, compliance support, and strategic legal advisory.
               </motion.span>
             </motion.p>
 
@@ -138,7 +138,7 @@ export default function Hero() {
                   >
                     <Calendar size={18} />
                   </motion.div>
-                  Schedule Consultation
+                  Get Started Today
                 </Button>
               </motion.div>
               <motion.div 
@@ -172,9 +172,9 @@ export default function Hero() {
               variants={itemVariants}
             >
               {[
-                { value: "500+", label: "Global Clients" },
-                { value: "98%", label: "Success Rate" },
-                { value: "24/7", label: "Available" },
+                { value: "Client", label: "Centric Focus" },
+                { value: "Secure", label: "Protocols" },
+                { value: "Efficient", label: "Processes" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}

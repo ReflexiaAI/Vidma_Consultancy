@@ -6,20 +6,20 @@ import { useRef } from "react";
 const achievements = [
   {
     icon: Check,
-    title: "Innovation Leadership",
-    description: "Setting new standards in legal consulting through strategic innovation.",
+    title: "Information Security",
+    description: "Strict adherence to industry best practices with cloud-based data storage and certifications.",
     color: "bg-charcoal",
   },
   {
     icon: Check,
-    title: "Global Presence",
-    description: "Expanding across continents with consistent excellence.",
+    title: "Multi-Jurisdictional Expertise",
+    description: "Experienced team providing legal services across multiple jurisdictions and practice areas.",
     color: "bg-charcoal",
   },
   {
     icon: Check,
-    title: "Technology First",
-    description: "Leading transformation through advanced legal technology.",
+    title: "Technology Integration",
+    description: "Intelligent use of software and processes for efficient project delivery and contract management.",
     color: "bg-charcoal",
   },
 ];
@@ -76,7 +76,7 @@ export default function About() {
               transition={{ delay: 0.2, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <span className="text-charcoal font-normal text-sm tracking-wide">Fastest Growing Legal Consultancy</span>
+              <span className="text-charcoal font-normal text-sm tracking-wide">Technology Enabled Legal & Business Consultancy</span>
             </motion.div>
 
             <motion.h2
@@ -86,8 +86,8 @@ export default function About() {
               transition={{ delay: 0.3, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Redefining Legal
-              <span className="font-normal text-bronze"> Excellence</span>
+              Simplifying Legal
+              <span className="font-normal text-bronze"> Processes</span>
             </motion.h2>
 
             <motion.p
@@ -97,7 +97,7 @@ export default function About() {
               transition={{ delay: 0.4, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              From visionary startup to industry leader, our growth reflects our commitment to exceptional legal solutions. We're not just practicing law—we're redefining it.
+              Vidma Consulting Group LLP has pledged its experience and skills to provide quality legal, financial and technological services with the highest integrity. We innovate and implement intelligent use of processes and technology.
             </motion.p>
 
             <div className="space-y-8 mb-12">
@@ -146,7 +146,7 @@ export default function About() {
               whileTap={{ scale: 0.98 }}
             >
               <Button className="bg-charcoal hover:bg-charcoal/90 text-white px-8 py-3 rounded-2xl font-medium transition-all duration-200">
-                Our Story
+                Learn More
               </Button>
             </motion.div>
           </motion.div>
@@ -177,9 +177,9 @@ export default function About() {
               whileHover={{ scale: 1.02 }}
             >
               <div className="text-center">
-                <div className="text-2xl font-light text-charcoal mb-1">300%</div>
-                <div className="text-xs text-text-light">Revenue Growth</div>
-                <div className="text-xs text-bronze mt-1">Year over Year</div>
+                <div className="text-2xl font-light text-charcoal mb-1">100%</div>
+                <div className="text-xs text-text-light">Client Satisfaction</div>
+                <div className="text-xs text-bronze mt-1">Trusted Partners</div>
               </div>
             </motion.div>
 
@@ -196,8 +196,8 @@ export default function About() {
                   <Rocket className="text-white text-lg" />
                 </div>
                 <div>
-                  <div className="font-medium text-charcoal text-sm">Next: IPO 2025</div>
-                  <div className="text-xs text-text-light">Strategic Expansion</div>
+                  <div className="font-medium text-charcoal text-sm">Quality Focus</div>
+                  <div className="text-xs text-text-light">Highest Integrity</div>
                 </div>
               </div>
             </motion.div>
