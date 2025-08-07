@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
-import { Check, Rocket } from "lucide-react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { Check, Rocket, Sparkles, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useRef } from "react";
 
 const achievements = [
   {
@@ -24,15 +25,49 @@ const achievements = [
 ];
 
 export default function About() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, x: -30, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
+  
   return (
-    <section id="about" className="section-spacing bg-soft-grey">
-      <div className="content-max-width mx-auto px-6">
+    <section id="about" className="section-spacing bg-soft-grey relative overflow-hidden">
+      
+      <div className="content-max-width mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
           >
             <motion.div
               className="inline-flex items-center bg-pure-white border border-charcoal/10 rounded-full px-4 py-2 mb-8"
@@ -69,21 +104,34 @@ export default function About() {
               {achievements.map((achievement, index) => (
                 <motion.div
                   key={achievement.title}
-                  className="flex items-start space-x-4"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + index * 0.1, duration: 0.8 }}
-                  viewport={{ once: true }}
+                  className="flex items-start space-x-4 magnetic-hover"
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.02, x: 10 }}
                 >
                   <motion.div
-                    className={`w-6 h-6 ${achievement.color} rounded-full flex items-center justify-center flex-shrink-0 mt-1`}
-                    whileHover={{ scale: 1.05 }}
+                    className={`w-6 h-6 ${achievement.color} rounded-full flex items-center justify-center flex-shrink-0 mt-1 relative`}
+                    whileHover={{ 
+                      scale: 1.2,
+                      rotate: 360
+                    }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     <achievement.icon className="text-white text-xs" />
                   </motion.div>
                   <div>
-                    <h4 className="font-medium text-charcoal mb-2">{achievement.title}</h4>
-                    <p className="text-text-light font-light">{achievement.description}</p>
+                    <motion.h4 
+                      className="font-medium text-charcoal mb-2"
+                      whileHover={{ color: "rgb(184, 115, 51)" }}
+                    >
+                      {achievement.title}
+                    </motion.h4>
+                    <motion.p 
+                      className="text-text-light font-light"
+                      initial={{ opacity: 0.7 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      {achievement.description}
+                    </motion.p>
                   </div>
                 </motion.div>
               ))}
@@ -105,9 +153,10 @@ export default function About() {
 
           <motion.div
             className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            style={{ y }}
+            initial={{ opacity: 0, scale: 0.8, rotateY: -20 }}
+            whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+            transition={{ duration: 1.2, type: "spring", stiffness: 100 }}
             viewport={{ once: true }}
           >
             <motion.img
