@@ -3,22 +3,11 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    content: "LegalConsult Pro transformed our M&A strategy and saved us millions in potential compliance issues. Their expertise is unmatched in the industry.",
-    author: "James Mitchell",
-    title: "CEO, TechCorp Industries",
+    content: "LegalConsult Pro has been our steadfast partner at the agency for all things legal!!!",
+    description: "I have been hiring LegalConsult Pro for the past 2 years. They have been a great partner with lots of experience. Always quick to respond. I have worked with many attorneys over the years and they are as good as they get.",
+    author: "Ribraj Bhuyan",
+    title: "Agency Director",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
-  },
-  {
-    content: "The international expansion legal framework they created allowed us to enter 12 new markets seamlessly. Outstanding strategic thinking.",
-    author: "Emma Thompson",
-    title: "CFO, Global Retail Corp",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
-  },
-  {
-    content: "Their proactive compliance monitoring system prevented potential regulatory issues that could have cost us our IPO timeline. Exceptional foresight.",
-    author: "Robert Kim",
-    title: "Founder, FinTech Solutions",
-    image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
   },
 ];
 
@@ -31,86 +20,43 @@ const trustIndicators = [
 
 export default function Testimonials() {
   return (
-    <section className="section-spacing bg-charcoal text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-charcoal"></div>
-      <div className="content-max-width mx-auto px-6 relative z-10">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl lg:text-6xl font-light mb-8 tracking-tight">
-            Client <span className="font-normal text-bronze">Stories</span>
-          </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
-            How we help industry leaders navigate complex challenges.
-          </p>
-        </motion.div>
+    <section className="py-20 bg-pure-white">
+      <div className="content-max-width mx-auto px-6">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="max-w-4xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.author}
-              className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10"
+              className="text-center"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.01 }}
             >
-              <div className="flex items-center mb-6">
-                <div className="flex text-bronze text-lg">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} fill="currentColor" />
-                  ))}
-                </div>
+              <div className="mb-8">
+                <p className="text-3xl lg:text-4xl font-light text-charcoal mb-6 leading-relaxed">
+                  "{testimonial.content}"
+                </p>
+                <p className="text-lg text-text-light font-light leading-relaxed max-w-3xl mx-auto">
+                  {testimonial.description}
+                </p>
               </div>
-              <p className="text-gray-200 mb-6 font-light leading-relaxed">"{testimonial.content}"</p>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <motion.img
                   src={testimonial.image}
                   alt={`${testimonial.author} - ${testimonial.title}`}
-                  className="w-10 h-10 rounded-full mr-4 object-cover"
+                  className="w-16 h-16 rounded-full mr-4 object-cover"
                   whileHover={{ scale: 1.05 }}
                 />
-                <div>
-                  <div className="font-medium text-sm">{testimonial.author}</div>
-                  <div className="text-gray-400 text-xs">{testimonial.title}</div>
+                <div className="text-left">
+                  <div className="font-medium text-charcoal">{testimonial.author}</div>
+                  <div className="text-text-light text-sm">{testimonial.title}</div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Trust indicators */}
-        <motion.div
-          className="mt-20 pt-16 border-t border-white/10"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-light mb-4 tracking-tight">Trusted by Industry Leaders</h3>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center opacity-70">
-            {trustIndicators.map((indicator, index) => (
-              <motion.div
-                key={indicator.label}
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 0.7, y: 0 }}
-                transition={{ delay: 0.5 + index * 0.1, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-xl font-light">{indicator.value}</div>
-                <div className="text-xs tracking-wide uppercase">{indicator.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

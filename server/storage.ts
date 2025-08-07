@@ -46,6 +46,7 @@ export class MemStorage implements IStorage {
       ...insertRequest,
       id,
       createdAt: new Date(),
+      agreedToTerms: insertRequest.agreedToTerms || "false",
     };
     this.consultationRequests.set(id, request);
     return request;
