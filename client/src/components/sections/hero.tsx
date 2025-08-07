@@ -11,18 +11,12 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20">
-      {/* Background with subtle pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cream to-cream-alt"></div>
-      <div 
-        className="absolute inset-0 opacity-5" 
-        style={{
-          backgroundImage: `url("data:image/svg+xml,<svg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><g fill='%23000000' fill-opacity='0.1'><circle cx='30' cy='30' r='2'/></g></svg>")`,
-        }}
-      ></div>
+    <section id="home" className="relative min-h-screen flex items-center pt-24">
+      {/* Clean Apple-inspired background */}
+      <div className="absolute inset-0 bg-pure-white"></div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="content-max-width mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: -50 }}
@@ -32,81 +26,80 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-flex items-center bg-bronze-light border border-bronze/20 rounded-full px-4 py-2 mb-6"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="inline-flex items-center bg-soft-grey border border-charcoal/10 rounded-full px-4 py-2 mb-8"
             >
-              <span className="text-bronze font-medium text-sm">🚀 Industry Leader in Legal Innovation</span>
+              <span className="text-charcoal font-normal text-sm tracking-wide">Industry Leader in Legal Innovation</span>
             </motion.div>
 
             <motion.h1
-              className="text-5xl lg:text-6xl font-bold text-navy leading-tight"
+              className="text-5xl lg:text-7xl font-light text-charcoal leading-tight tracking-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Transforming Legal
-              <span className="text-bronze"> Excellence</span>
-              at Scale
+              Legal Excellence
+              <span className="text-bronze font-normal"> Reimagined</span>
             </motion.h1>
 
             <motion.p
-              className="text-xl text-grey-secondary leading-relaxed"
+              className="text-lg text-text-light leading-relaxed font-light max-w-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
             >
-              As the fastest-growing legal consulting firm, we deliver premium solutions that drive business success. Our innovative approach has helped Fortune 500 companies navigate complex legal landscapes with confidence.
+              Transforming legal consulting through innovation, precision, and strategic thinking. We help visionary companies navigate complexity with confidence.
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 mt-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Button
                   onClick={scrollToContact}
-                  className="bg-bronze hover:bg-bronze-hover text-white px-8 py-4 rounded-lg font-semibold"
+                  className="bg-charcoal hover:bg-charcoal/90 text-white px-8 py-3 rounded-xl font-medium transition-all duration-200"
                   size="lg"
                 >
-                  <Calendar className="mr-2" size={20} />
-                  Book Strategic Consultation
+                  <Calendar className="mr-2" size={18} />
+                  Schedule Consultation
                 </Button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Button
                   variant="outline"
-                  className="border-2 border-navy text-navy hover:bg-navy hover:text-white px-8 py-4 rounded-lg font-semibold"
+                  className="border border-charcoal/20 text-charcoal hover:bg-charcoal hover:text-white px-8 py-3 rounded-xl font-medium transition-all duration-200"
                   size="lg"
                 >
-                  <Play className="mr-2" size={20} />
-                  Watch Our Story
+                  <Play className="mr-2" size={18} />
+                  Learn More
                 </Button>
               </motion.div>
             </motion.div>
 
             {/* Stats */}
             <motion.div
-              className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200"
+              className="grid grid-cols-3 gap-8 pt-16 border-t border-charcoal/5 mt-16"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
             >
               {[
-                { value: "500+", label: "Clients Served" },
+                { value: "500+", label: "Global Clients" },
                 { value: "98%", label: "Success Rate" },
-                { value: "24/7", label: "Support" },
+                { value: "24/7", label: "Available" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   className="text-center"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2 + index * 0.1, duration: 0.6 }}
+                  transition={{ delay: 1.2 + index * 0.1, duration: 0.8 }}
                 >
-                  <div className="text-3xl font-bold text-bronze">{stat.value}</div>
-                  <div className="text-sm text-grey-secondary">{stat.label}</div>
+                  <div className="text-2xl font-light text-charcoal">{stat.value}</div>
+                  <div className="text-xs text-text-light tracking-wide uppercase">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -121,24 +114,24 @@ export default function Hero() {
             <motion.img
               src="https://images.unsplash.com/photo-1556484687-30636164638b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
               alt="Professional legal consultation meeting"
-              className="rounded-2xl shadow-2xl w-full animate-float"
+              className="rounded-3xl w-full animate-float shadow-sm"
             />
 
             {/* Floating achievement card */}
             <motion.div
-              className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 border border-gray-100"
+              className="absolute -bottom-8 -left-8 apple-blur rounded-2xl p-6 border border-charcoal/5"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              whileHover={{ scale: 1.05 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+              whileHover={{ scale: 1.02 }}
             >
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-teal rounded-lg flex items-center justify-center">
-                  <Trophy className="text-white text-xl" />
+                <div className="w-10 h-10 bg-charcoal rounded-xl flex items-center justify-center">
+                  <Trophy className="text-white text-lg" />
                 </div>
                 <div>
-                  <div className="font-bold text-navy">Industry Leader</div>
-                  <div className="text-sm text-grey-secondary">Top Legal Consultancy 2024</div>
+                  <div className="font-medium text-charcoal text-sm">Industry Leader</div>
+                  <div className="text-xs text-text-light">Top Legal Consultancy 2024</div>
                 </div>
               </div>
             </motion.div>

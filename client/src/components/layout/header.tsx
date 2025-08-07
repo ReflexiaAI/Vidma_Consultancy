@@ -26,24 +26,24 @@ export default function Header() {
 
   return (
     <motion.header
-      className={`fixed top-0 w-full z-50 border-b border-gray-200 transition-all duration-300 ${
-        isScrolled ? "floating-nav bg-white/95" : "bg-cream/80"
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        isScrolled ? "floating-nav" : "bg-pure-white/90"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="content-max-width mx-auto px-6 py-6">
         <div className="flex justify-between items-center">
           <motion.div
             className="flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <div className="w-10 h-10 bg-bronze rounded-lg flex items-center justify-center">
-              <Scale className="text-white text-xl" />
+            <div className="w-8 h-8 bg-charcoal rounded-md flex items-center justify-center">
+              <Scale className="text-white text-lg" />
             </div>
-            <span className="text-2xl font-bold text-navy">LegalConsult Pro</span>
+            <span className="text-xl font-medium text-charcoal tracking-tight">LegalConsult Pro</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -58,7 +58,7 @@ export default function Header() {
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="text-charcoal hover:text-bronze transition-colors duration-300"
+                className="text-charcoal hover:text-bronze transition-colors duration-200 font-normal text-sm tracking-wide"
                 whileHover={{ y: -2 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
@@ -73,7 +73,7 @@ export default function Header() {
           >
             <Button
               onClick={() => scrollToSection("contact")}
-              className="bg-bronze hover:bg-bronze-hover text-white px-6 py-3 rounded-lg font-semibold hidden md:block"
+              className="bg-charcoal hover:bg-charcoal/90 text-white px-6 py-2.5 rounded-lg font-medium text-sm hidden md:block transition-all duration-200"
             >
               Schedule Consultation
             </Button>

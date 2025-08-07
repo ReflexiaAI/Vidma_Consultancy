@@ -51,16 +51,19 @@
   --tracking-normal: 0em;
   --spacing: 0.25rem;
   
-  /* Legal Consultancy Brand Colors */
-  --cream: hsl(45 50% 98.0392%);
-  --cream-alt: hsl(40 25% 95.6863%);
-  --navy: hsl(208 37.5% 17.8431%);
-  --teal: hsl(170 63.1579% 40.0000%);
-  --bronze: hsl(30 55.0000% 46.2745%);
-  --bronze-hover: hsl(30 63.6364% 39.0196%);
-  --bronze-light: hsl(30 85.7143% 97.0588%);
-  --charcoal: hsl(0 0% 20.0000%);
-  --grey-secondary: hsl(0 0% 40.0000%);
+  /* Legal Consultancy Brand Colors - Apple-inspired minimalist palette */
+  --cream: hsl(0 0% 99%);
+  --cream-alt: hsl(0 0% 97%);
+  --navy: hsl(210 15% 15%);
+  --teal: hsl(170 50% 45%);
+  --bronze: hsl(25 30% 40%);
+  --bronze-hover: hsl(25 40% 35%);
+  --bronze-light: hsl(25 60% 98%);
+  --charcoal: hsl(0 0% 12%);
+  --grey-secondary: hsl(0 0% 50%);
+  --pure-white: hsl(0 0% 100%);
+  --soft-grey: hsl(0 0% 96%);
+  --text-light: hsl(0 0% 60%);
 }
 
 .dark {
@@ -126,29 +129,43 @@
 
 @layer utilities {
   .gradient-overlay {
-    background: linear-gradient(135deg, rgba(30, 42, 56, 0.95), rgba(42, 157, 143, 0.85));
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.8), rgba(42, 157, 143, 0.6));
   }
   
   .floating-nav {
-    backdrop-filter: blur(10px);
-    background-color: rgba(250, 250, 248, 0.95);
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
   
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
   }
   
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-10px); }
   }
   
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out;
+    animation: fadeIn 1s ease-out;
   }
   
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .apple-blur {
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .section-spacing {
+    padding: 120px 0;
+  }
+  
+  .content-max-width {
+    max-width: 1200px;
   }
 }

@@ -31,9 +31,9 @@ const trustIndicators = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-navy text-white relative overflow-hidden">
-      <div className="absolute inset-0 gradient-overlay"></div>
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="section-spacing bg-charcoal text-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-charcoal"></div>
+      <div className="content-max-width mx-auto px-6 relative z-10">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
@@ -41,24 +41,24 @@ export default function Testimonials() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Client <span className="text-bronze">Success Stories</span>
+          <h2 className="text-4xl lg:text-6xl font-light mb-8 tracking-tight">
+            Client <span className="font-normal text-bronze">Stories</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See how we've helped industry leaders navigate complex legal challenges and achieve unprecedented growth.
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
+            How we help industry leaders navigate complex challenges.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.author}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
-              initial={{ opacity: 0, y: 50 }}
+              className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.01 }}
             >
               <div className="flex items-center mb-6">
                 <div className="flex text-bronze text-lg">
@@ -67,17 +67,17 @@ export default function Testimonials() {
                   ))}
                 </div>
               </div>
-              <p className="text-gray-200 mb-6 italic">"{testimonial.content}"</p>
+              <p className="text-gray-200 mb-6 font-light leading-relaxed">"{testimonial.content}"</p>
               <div className="flex items-center">
                 <motion.img
                   src={testimonial.image}
                   alt={`${testimonial.author} - ${testimonial.title}`}
-                  className="w-12 h-12 rounded-full mr-4 object-cover"
-                  whileHover={{ scale: 1.1 }}
+                  className="w-10 h-10 rounded-full mr-4 object-cover"
+                  whileHover={{ scale: 1.05 }}
                 />
                 <div>
-                  <div className="font-semibold">{testimonial.author}</div>
-                  <div className="text-gray-400 text-sm">{testimonial.title}</div>
+                  <div className="font-medium text-sm">{testimonial.author}</div>
+                  <div className="text-gray-400 text-xs">{testimonial.title}</div>
                 </div>
               </div>
             </motion.div>
@@ -86,27 +86,27 @@ export default function Testimonials() {
 
         {/* Trust indicators */}
         <motion.div
-          className="mt-16 pt-16 border-t border-white/20"
+          className="mt-20 pt-16 border-t border-white/10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Trusted by Industry Leaders</h3>
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-light mb-4 tracking-tight">Trusted by Industry Leaders</h3>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center opacity-70">
             {trustIndicators.map((indicator, index) => (
               <motion.div
                 key={indicator.label}
                 className="text-center"
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 0.6, y: 0 }}
-                transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
+                whileInView={{ opacity: 0.7, y: 0 }}
+                transition={{ delay: 0.5 + index * 0.1, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="text-2xl font-bold">{indicator.value}</div>
-                <div className="text-sm">{indicator.label}</div>
+                <div className="text-xl font-light">{indicator.value}</div>
+                <div className="text-xs tracking-wide uppercase">{indicator.label}</div>
               </motion.div>
             ))}
           </div>

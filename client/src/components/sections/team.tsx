@@ -25,8 +25,8 @@ const team = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="team" className="section-spacing bg-pure-white">
+      <div className="content-max-width mx-auto px-6">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
@@ -34,49 +34,49 @@ export default function Team() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">
-            Meet Our <span className="text-bronze">Leadership Team</span>
+          <h2 className="text-4xl lg:text-6xl font-light text-charcoal mb-8 tracking-tight">
+            Leadership <span className="font-normal">Team</span>
           </h2>
-          <p className="text-xl text-grey-secondary max-w-3xl mx-auto">
-            Industry veterans and visionary leaders driving innovation in legal consulting with decades of combined experience.
+          <p className="text-lg text-text-light max-w-2xl mx-auto font-light leading-relaxed">
+            Visionary leaders driving innovation in legal consulting.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {team.map((member, index) => (
             <motion.div
               key={member.name}
-              className="bg-cream rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group"
-              initial={{ opacity: 0, y: 50 }}
+              className="bg-pure-white border border-charcoal/5 rounded-3xl p-8 text-center transition-all duration-300 hover:shadow-sm hover:-translate-y-1 group"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.01 }}
             >
               <motion.img
                 src={member.image}
                 alt={`${member.name} - ${member.role}`}
-                className="w-24 h-24 rounded-full mx-auto mb-6 object-cover"
-                whileHover={{ scale: 1.1 }}
+                className="w-20 h-20 rounded-full mx-auto mb-6 object-cover"
+                whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               />
-              <h3 className="text-xl font-bold text-navy mb-2">{member.name}</h3>
-              <p className="text-bronze font-semibold mb-3">{member.role}</p>
-              <p className="text-grey-secondary text-sm mb-4">{member.description}</p>
-              <div className="flex justify-center space-x-3">
+              <h3 className="text-lg font-medium text-charcoal mb-2">{member.name}</h3>
+              <p className="text-bronze font-light mb-4 text-sm">{member.role}</p>
+              <p className="text-text-light text-sm mb-6 font-light leading-relaxed">{member.description}</p>
+              <div className="flex justify-center space-x-4">
                 <motion.a
                   href="#"
-                  className="text-bronze hover:text-bronze-hover transition-colors"
-                  whileHover={{ scale: 1.2 }}
+                  className="text-charcoal hover:text-bronze transition-colors"
+                  whileHover={{ scale: 1.1 }}
                 >
-                  <Linkedin className="text-lg" />
+                  <Linkedin className="text-base" />
                 </motion.a>
                 <motion.a
                   href="#"
-                  className="text-bronze hover:text-bronze-hover transition-colors"
-                  whileHover={{ scale: 1.2 }}
+                  className="text-charcoal hover:text-bronze transition-colors"
+                  whileHover={{ scale: 1.1 }}
                 >
-                  <Twitter className="text-lg" />
+                  <Twitter className="text-base" />
                 </motion.a>
               </div>
             </motion.div>
@@ -84,14 +84,14 @@ export default function Team() {
         </div>
 
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="bg-bronze hover:bg-bronze-hover text-white px-8 py-4 rounded-lg font-semibold">
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <Button className="bg-charcoal hover:bg-charcoal/90 text-white px-8 py-3 rounded-2xl font-medium transition-all duration-200">
               View Full Team
             </Button>
           </motion.div>

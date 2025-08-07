@@ -90,24 +90,24 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-cream">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+    <section id="contact" className="section-spacing bg-soft-grey">
+      <div className="content-max-width mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6">
+            <h2 className="text-4xl lg:text-6xl font-light text-charcoal mb-8 tracking-tight leading-tight">
               Ready to Transform Your 
-              <span className="text-bronze"> Legal Strategy?</span>
+              <span className="font-normal text-bronze"> Legal Strategy?</span>
             </h2>
-            <p className="text-xl text-grey-secondary mb-8 leading-relaxed">
-              Join the ranks of industry leaders who trust LegalConsult Pro for their most critical legal challenges. Let's discuss how we can accelerate your business growth.
+            <p className="text-lg text-text-light mb-12 leading-relaxed font-light">
+              Join industry leaders who trust us for their most critical legal challenges.
             </p>
 
-            <div className="space-y-6 mb-8">
+            <div className="space-y-8 mb-12">
               {[
                 {
                   icon: Phone,
@@ -133,18 +133,18 @@ export default function Contact() {
                   className="flex items-center space-x-4"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 + index * 0.1, duration: 0.6 }}
+                  transition={{ delay: 0.2 + index * 0.1, duration: 0.8 }}
                   viewport={{ once: true }}
                 >
                   <motion.div
-                    className={`w-12 h-12 ${contact.color} rounded-lg flex items-center justify-center`}
-                    whileHover={{ scale: 1.1 }}
+                    className={`w-10 h-10 ${contact.color} rounded-2xl flex items-center justify-center`}
+                    whileHover={{ scale: 1.05 }}
                   >
-                    <contact.icon className="text-white text-lg" />
+                    <contact.icon className="text-white text-base" />
                   </motion.div>
                   <div>
-                    <div className="font-semibold text-navy">{contact.title}</div>
-                    <div className="text-grey-secondary">{contact.description}</div>
+                    <div className="font-medium text-charcoal text-sm">{contact.title}</div>
+                    <div className="text-text-light font-light text-sm">{contact.description}</div>
                   </div>
                 </motion.div>
               ))}
@@ -152,24 +152,24 @@ export default function Contact() {
 
             {/* Social proof */}
             <motion.div
-              className="bg-white rounded-xl p-6 border border-gray-200"
+              className="bg-pure-white rounded-2xl p-6 border border-charcoal/5"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.01 }}
             >
               <div className="flex items-center space-x-4 mb-4">
-                <div className="w-10 h-10 bg-bronze rounded-lg flex items-center justify-center">
-                  <Calendar className="text-white" />
+                <div className="w-8 h-8 bg-charcoal rounded-xl flex items-center justify-center">
+                  <Calendar className="text-white text-sm" />
                 </div>
                 <div>
-                  <div className="font-semibold text-navy">Free Strategic Assessment</div>
-                  <div className="text-sm text-grey-secondary">45-minute consultation with senior partner</div>
+                  <div className="font-medium text-charcoal text-sm">Free Strategic Assessment</div>
+                  <div className="text-xs text-text-light">45-minute consultation with senior partner</div>
                 </div>
               </div>
-              <div className="text-xs text-teal flex items-center">
-                <CheckCircle size={12} className="mr-1" />
+              <div className="text-xs text-bronze flex items-center">
+                <CheckCircle size={10} className="mr-1" />
                 Usually books out 2-3 weeks in advance
               </div>
             </motion.div>
@@ -177,18 +177,18 @@ export default function Contact() {
 
           {/* Contact Form */}
           <motion.div
-            className="bg-white rounded-2xl shadow-xl p-8"
+            className="bg-pure-white rounded-3xl shadow-sm p-10 border border-charcoal/5"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-navy mb-6">Schedule Your Strategic Consultation</h3>
+            <h3 className="text-2xl font-light text-charcoal mb-8 tracking-tight">Schedule Strategic Consultation</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="firstName" className="block text-sm font-semibold text-charcoal mb-2">
+                  <Label htmlFor="firstName" className="block text-xs font-medium text-charcoal mb-2 tracking-wide uppercase">
                     First Name *
                   </Label>
                   <Input
@@ -197,7 +197,7 @@ export default function Contact() {
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                     placeholder="John"
-                    className="w-full focus:ring-2 focus:ring-bronze focus:border-transparent"
+                    className="w-full focus:ring-1 focus:ring-bronze focus:border-transparent border-charcoal/10 rounded-xl"
                     required
                   />
                 </div>
@@ -313,13 +313,13 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={submitConsultationMutation.isPending}
-                  className="w-full bg-bronze hover:bg-bronze-hover text-white py-4 rounded-lg font-semibold disabled:opacity-50"
+                  className="w-full bg-charcoal hover:bg-charcoal/90 text-white py-4 rounded-2xl font-medium disabled:opacity-50 transition-all duration-200"
                 >
                   {submitConsultationMutation.isPending ? (
                     "Submitting..."
                   ) : (
                     <>
-                      <Calendar className="mr-2" size={20} />
+                      <Calendar className="mr-2" size={18} />
                       Schedule Free Consultation
                     </>
                   )}
