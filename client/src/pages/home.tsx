@@ -2,9 +2,9 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import Hero from "@/components/sections/hero";
 import Services from "@/components/sections/services";
+import About from "@/components/sections/about";
+import Team from "@/components/sections/team";
 import Testimonials from "@/components/sections/testimonials";
-import TrustedBy from "@/components/sections/trusted-by";
-import FAQ from "@/components/sections/faq";
 import Contact from "@/components/sections/contact";
 
 export default function Home() {
@@ -14,9 +14,9 @@ export default function Home() {
       <main className="overflow-hidden">
         <Hero />
         <Services />
+        <About />
+        <Team />
         <Testimonials />
-        <TrustedBy />
-        <FAQ />
         <Contact />
       </main>
       <Footer />

@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <motion.header
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? "floating-nav" : "bg-pure-white/95 backdrop-blur-sm"
+        isScrolled ? "floating-nav" : "bg-pure-white/90"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -51,7 +51,8 @@ export default function Header() {
             {[
               { name: "Home", id: "home" },
               { name: "Services", id: "services" },
-              { name: "About", id: "faq" },
+              { name: "About", id: "about" },
+              { name: "Team", id: "team" },
               { name: "Contact", id: "contact" },
             ].map((item) => (
               <motion.button
@@ -99,7 +100,8 @@ export default function Header() {
               {[
                 { name: "Home", id: "home" },
                 { name: "Services", id: "services" },
-                { name: "About", id: "faq" },
+                { name: "About", id: "about" },
+                { name: "Team", id: "team" },
                 { name: "Contact", id: "contact" },
               ].map((item) => (
                 <button
