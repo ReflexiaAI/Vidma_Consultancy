@@ -9,7 +9,7 @@ import Contact from "@/components/sections/contact";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-pure-white font-inter">
+    <div className="min-h-screen bg-background dark:bg-background font-inter transition-colors duration-300">
       <Header />
       <main className="overflow-hidden">
         <Hero />

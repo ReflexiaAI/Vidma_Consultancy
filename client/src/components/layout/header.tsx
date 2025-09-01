@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Scale, Menu, X } from "lucide-react";
+import { Scale, Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/components/theme-provider";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +29,7 @@ export default function Header() {
   return (
     <motion.header
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? "floating-nav" : "bg-pure-white/90"
+        isScrolled ? "floating-nav" : "bg-background/90 dark:bg-background/90 backdrop-blur-sm"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -43,7 +45,7 @@ export default function Header() {
             <div className="w-8 h-8 bg-charcoal rounded-md flex items-center justify-center">
               <Scale className="text-white text-lg" />
             </div>
-            <span className="text-xl font-medium text-charcoal tracking-tight">Vidma Consulting Group</span>
+            <span className="text-xl font-medium text-foreground dark:text-foreground tracking-tight">Vidma Consulting Group</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -58,7 +60,7 @@ export default function Header() {
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="text-charcoal hover:text-bronze transition-colors duration-200 font-normal text-sm tracking-wide"
+                className="text-foreground dark:text-foreground hover:text-bronze transition-colors duration-200 font-normal text-sm tracking-wide"
                 whileHover={{ y: -2 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
@@ -67,25 +69,59 @@ export default function Header() {
             ))}
           </div>
 
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="bg-charcoal hover:bg-charcoal/90 text-white px-6 py-2.5 rounded-lg font-medium text-sm hidden md:block transition-all duration-200"
+          <div className="hidden md:flex items-center space-x-3">
+            <motion.button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              data-testid="theme-toggle"
             >
-              Schedule Consultation
-            </Button>
-          </motion.div>
+              {theme === "light" ? (
+                <Moon className="w-4 h-4 text-gray-700 dark:text-gray-300" />
+              ) : (
+                <Sun className="w-4 h-4 text-gray-700 dark:text-gray-300" />
+              )}
+            </motion.button>
+            
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className="bg-charcoal hover:bg-charcoal/90 text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all duration-200"
+                data-testid="button-schedule-consultation"
+              >
+                Schedule Consultation
+              </Button>
+            </motion.div>
+          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-charcoal"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <motion.button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              data-testid="theme-toggle-mobile"
+            >
+              {theme === "light" ? (
+                <Moon className="w-4 h-4 text-gray-700 dark:text-gray-300" />
+              ) : (
+                <Sun className="w-4 h-4 text-gray-700 dark:text-gray-300" />
+              )}
+            </motion.button>
+            
+            <button
+              className="text-foreground dark:text-foreground"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              data-testid="button-mobile-menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -107,7 +143,7 @@ export default function Header() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-charcoal hover:text-bronze transition-colors duration-300 text-left"
+                  className="text-foreground dark:text-foreground hover:text-bronze transition-colors duration-300 text-left"
                 >
                   {item.name}
                 </button>

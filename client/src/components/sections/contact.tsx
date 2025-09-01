@@ -90,7 +90,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-spacing bg-soft-grey">
+    <section id="contact" className="section-spacing bg-muted dark:bg-muted transition-colors duration-300">
       <div className="content-max-width mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-start">
           <motion.div
@@ -99,11 +99,11 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-6xl font-light text-charcoal mb-8 tracking-tight leading-tight">
+            <h2 className="text-4xl lg:text-6xl font-light text-foreground dark:text-foreground mb-8 tracking-tight leading-tight">
               Ready to Simplify Your 
               <span className="font-normal text-bronze"> Legal Processes?</span>
             </h2>
-            <p className="text-lg text-text-light mb-12 leading-relaxed font-light">
+            <p className="text-lg text-muted-foreground dark:text-muted-foreground mb-12 leading-relaxed font-light">
               Tell us about what you're looking for, and we will get back to you soon with solutions and ideas.
             </p>
 
@@ -143,8 +143,8 @@ export default function Contact() {
                     <contact.icon className="text-white text-base" />
                   </motion.div>
                   <div>
-                    <div className="font-medium text-charcoal text-sm">{contact.title}</div>
-                    <div className="text-text-light font-light text-sm">{contact.description}</div>
+                    <div className="font-medium text-foreground dark:text-foreground text-sm">{contact.title}</div>
+                    <div className="text-muted-foreground dark:text-muted-foreground font-light text-sm">{contact.description}</div>
                   </div>
                 </motion.div>
               ))}
@@ -152,7 +152,7 @@ export default function Contact() {
 
             {/* Social proof */}
             <motion.div
-              className="bg-pure-white rounded-2xl p-6 border border-charcoal/5"
+              className="bg-card dark:bg-card rounded-2xl p-6 border border-border"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -164,8 +164,8 @@ export default function Contact() {
                   <Calendar className="text-white text-sm" />
                 </div>
                 <div>
-                  <div className="font-medium text-charcoal text-sm">Professional Consultation</div>
-                  <div className="text-xs text-text-light">Expert legal and business advisory services</div>
+                  <div className="font-medium text-foreground dark:text-foreground text-sm">Professional Consultation</div>
+                  <div className="text-xs text-muted-foreground dark:text-muted-foreground">Expert legal and business advisory services</div>
                 </div>
               </div>
               <div className="text-xs text-bronze flex items-center">
@@ -177,18 +177,18 @@ export default function Contact() {
 
           {/* Contact Form */}
           <motion.div
-            className="bg-pure-white rounded-3xl shadow-sm p-10 border border-charcoal/5"
+            className="bg-card dark:bg-card rounded-3xl shadow-sm p-10 border border-border"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-light text-charcoal mb-8 tracking-tight">Contact Us</h3>
+            <h3 className="text-2xl font-light text-foreground dark:text-foreground mb-8 tracking-tight">Contact Us</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="firstName" className="block text-xs font-medium text-charcoal mb-2 tracking-wide uppercase">
+                  <Label htmlFor="firstName" className="block text-xs font-medium text-foreground dark:text-foreground mb-2 tracking-wide uppercase">
                     First Name *
                   </Label>
                   <Input
@@ -202,7 +202,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="lastName" className="block text-sm font-semibold text-charcoal mb-2">
+                  <Label htmlFor="lastName" className="block text-sm font-semibold text-foreground dark:text-foreground mb-2">
                     Last Name *
                   </Label>
                   <Input
@@ -218,7 +218,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <Label htmlFor="company" className="block text-sm font-semibold text-charcoal mb-2">
+                <Label htmlFor="company" className="block text-sm font-semibold text-foreground dark:text-foreground mb-2">
                   Company *
                 </Label>
                 <Input
@@ -233,7 +233,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <Label htmlFor="email" className="block text-sm font-semibold text-charcoal mb-2">
+                <Label htmlFor="email" className="block text-sm font-semibold text-foreground dark:text-foreground mb-2">
                   Email Address *
                 </Label>
                 <Input
@@ -248,7 +248,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <Label htmlFor="phone" className="block text-sm font-semibold text-charcoal mb-2">
+                <Label htmlFor="phone" className="block text-sm font-semibold text-foreground dark:text-foreground mb-2">
                   Phone Number *
                 </Label>
                 <Input
@@ -263,7 +263,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <Label htmlFor="legalChallenge" className="block text-sm font-semibold text-charcoal mb-2">
+                <Label htmlFor="legalChallenge" className="block text-sm font-semibold text-foreground dark:text-foreground mb-2">
                   Legal Challenge *
                 </Label>
                 <Select value={formData.legalChallenge} onValueChange={(value) => setFormData({ ...formData, legalChallenge: value })}>
@@ -283,7 +283,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <Label htmlFor="projectDetails" className="block text-sm font-semibold text-charcoal mb-2">
+                <Label htmlFor="projectDetails" className="block text-sm font-semibold text-foreground dark:text-foreground mb-2">
                   Project Details *
                 </Label>
                 <Textarea
@@ -304,7 +304,7 @@ export default function Contact() {
                   onCheckedChange={(checked) => setFormData({ ...formData, agreedToTerms: checked === true })}
                   className="mt-1"
                 />
-                <Label htmlFor="terms" className="text-sm text-grey-secondary leading-relaxed">
+                <Label htmlFor="terms" className="text-sm text-muted-foreground dark:text-muted-foreground leading-relaxed">
                   I agree to receive communications about Vidma Consulting Group services and understand that consultation details will remain confidential.
                 </Label>
               </div>
@@ -326,7 +326,7 @@ export default function Contact() {
                 </Button>
               </motion.div>
 
-              <div className="text-center text-sm text-grey-secondary flex items-center justify-center">
+              <div className="text-center text-sm text-muted-foreground dark:text-muted-foreground flex items-center justify-center">
                 <Lock className="mr-1" size={16} />
                 All communications are kept strictly confidential
               </div>

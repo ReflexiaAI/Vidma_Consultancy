@@ -59,7 +59,7 @@ export default function About() {
   };
   
   return (
-    <section id="about" className="section-spacing bg-soft-grey relative overflow-hidden">
+    <section id="about" className="section-spacing bg-muted dark:bg-muted relative overflow-hidden transition-colors duration-300">
       
       <div className="content-max-width mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
@@ -70,17 +70,17 @@ export default function About() {
             animate={isInView ? "visible" : "hidden"}
           >
             <motion.div
-              className="inline-flex items-center bg-pure-white border border-charcoal/10 rounded-full px-4 py-2 mb-8"
+              className="inline-flex items-center bg-background dark:bg-background border border-border rounded-full px-4 py-2 mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <span className="text-charcoal font-normal text-sm tracking-wide">Technology Enabled Legal & Business Consultancy</span>
+              <span className="text-foreground dark:text-foreground font-normal text-sm tracking-wide">Technology Enabled Legal & Business Consultancy</span>
             </motion.div>
 
             <motion.h2
-              className="text-4xl lg:text-6xl font-light text-charcoal mb-8 tracking-tight leading-tight"
+              className="text-4xl lg:text-6xl font-light text-foreground dark:text-foreground mb-8 tracking-tight leading-tight"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -91,7 +91,7 @@ export default function About() {
             </motion.h2>
 
             <motion.p
-              className="text-lg text-text-light mb-12 leading-relaxed font-light"
+              className="text-lg text-muted-foreground dark:text-muted-foreground mb-12 leading-relaxed font-light"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -120,13 +120,13 @@ export default function About() {
                   </motion.div>
                   <div>
                     <motion.h4 
-                      className="font-medium text-charcoal mb-2"
+                      className="font-medium text-foreground dark:text-foreground mb-2"
                       whileHover={{ color: "rgb(184, 115, 51)" }}
                     >
                       {achievement.title}
                     </motion.h4>
                     <motion.p 
-                      className="text-text-light font-light"
+                      className="text-muted-foreground dark:text-muted-foreground font-light"
                       initial={{ opacity: 0.7 }}
                       whileHover={{ opacity: 1 }}
                     >
@@ -169,7 +169,7 @@ export default function About() {
 
             {/* Growth metrics overlay */}
             <motion.div
-              className="absolute -top-8 -right-8 apple-blur rounded-2xl p-6 border border-charcoal/5"
+              className="absolute -top-8 -right-8 bg-card dark:bg-card rounded-2xl p-6 border border-border backdrop-blur-md"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
@@ -177,14 +177,14 @@ export default function About() {
               whileHover={{ scale: 1.02 }}
             >
               <div className="text-center">
-                <div className="text-2xl font-light text-charcoal mb-1">100%</div>
-                <div className="text-xs text-text-light">Client Satisfaction</div>
+                <div className="text-2xl font-light text-foreground dark:text-foreground mb-1">100%</div>
+                <div className="text-xs text-muted-foreground dark:text-muted-foreground">Client Satisfaction</div>
                 <div className="text-xs text-bronze mt-1">Trusted Partners</div>
               </div>
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-8 -left-8 apple-blur rounded-2xl p-6 border border-charcoal/5"
+              className="absolute -bottom-8 -left-8 bg-card dark:bg-card rounded-2xl p-6 border border-border backdrop-blur-md"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.2, duration: 0.8 }}
@@ -196,8 +196,8 @@ export default function About() {
                   <Rocket className="text-white text-lg" />
                 </div>
                 <div>
-                  <div className="font-medium text-charcoal text-sm">Quality Focus</div>
-                  <div className="text-xs text-text-light">Highest Integrity</div>
+                  <div className="font-medium text-foreground dark:text-foreground text-sm">Quality Focus</div>
+                  <div className="text-xs text-muted-foreground dark:text-muted-foreground">Highest Integrity</div>
                 </div>
               </div>
             </motion.div>

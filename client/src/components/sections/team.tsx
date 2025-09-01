@@ -25,7 +25,7 @@ const team = [
 
 export default function Team() {
   return (
-    <section id="team" className="section-spacing bg-pure-white">
+    <section id="team" className="section-spacing bg-background dark:bg-background transition-colors duration-300">
       <div className="content-max-width mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -34,10 +34,10 @@ export default function Team() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-6xl font-light text-charcoal mb-8 tracking-tight">
+          <h2 className="text-4xl lg:text-6xl font-light text-foreground dark:text-foreground mb-8 tracking-tight">
             Leadership <span className="font-normal">Team</span>
           </h2>
-          <p className="text-lg text-text-light max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-lg text-muted-foreground dark:text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed">
             Visionary leaders driving innovation in legal consulting.
           </p>
         </motion.div>
@@ -46,7 +46,7 @@ export default function Team() {
           {team.map((member, index) => (
             <motion.div
               key={member.name}
-              className="bg-pure-white border border-charcoal/5 rounded-3xl p-8 text-center transition-all duration-300 hover:shadow-sm hover:-translate-y-1 group"
+              className="bg-card dark:bg-card border border-border rounded-3xl p-8 text-center transition-all duration-300 hover:shadow-sm hover:-translate-y-1 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -60,20 +60,20 @@ export default function Team() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               />
-              <h3 className="text-lg font-medium text-charcoal mb-2">{member.name}</h3>
+              <h3 className="text-lg font-medium text-foreground dark:text-foreground mb-2">{member.name}</h3>
               <p className="text-bronze font-light mb-4 text-sm">{member.role}</p>
-              <p className="text-text-light text-sm mb-6 font-light leading-relaxed">{member.description}</p>
+              <p className="text-muted-foreground dark:text-muted-foreground text-sm mb-6 font-light leading-relaxed">{member.description}</p>
               <div className="flex justify-center space-x-4">
                 <motion.a
                   href="#"
-                  className="text-charcoal hover:text-bronze transition-colors"
+                  className="text-foreground dark:text-foreground hover:text-bronze transition-colors"
                   whileHover={{ scale: 1.1 }}
                 >
                   <Linkedin className="text-base" />
                 </motion.a>
                 <motion.a
                   href="#"
-                  className="text-charcoal hover:text-bronze transition-colors"
+                  className="text-foreground dark:text-foreground hover:text-bronze transition-colors"
                   whileHover={{ scale: 1.1 }}
                 >
                   <Twitter className="text-base" />

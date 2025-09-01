@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal text-white pt-20 pb-8">
+    <footer className="bg-secondary dark:bg-secondary text-secondary-foreground dark:text-secondary-foreground pt-20 pb-8 transition-colors duration-300">
       <div className="content-max-width mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -19,9 +19,9 @@ export default function Footer() {
               <div className="w-8 h-8 bg-bronze rounded-xl flex items-center justify-center">
                 <Scale className="text-white text-lg" />
               </div>
-              <span className="text-xl font-medium tracking-tight">LegalConsult Pro</span>
+              <span className="text-xl font-medium tracking-tight">Vidma Consulting Group</span>
             </div>
-            <p className="text-gray-300 mb-8 leading-relaxed font-light">
+            <p className="text-muted-foreground dark:text-muted-foreground mb-8 leading-relaxed font-light">
               Transforming legal excellence at scale through innovation and strategic thinking.
             </p>
             <div className="flex space-x-4">
@@ -57,7 +57,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h4 className="text-base font-medium mb-6 tracking-wide">Legal Services</h4>
-            <ul className="space-y-3 text-gray-300">
+            <ul className="space-y-3 text-muted-foreground dark:text-muted-foreground">
               {[
                 "Corporate Law",
                 "M&A Transactions",
@@ -83,7 +83,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h4 className="text-base font-medium mb-6 tracking-wide">Company</h4>
-            <ul className="space-y-3 text-gray-300">
+            <ul className="space-y-3 text-muted-foreground dark:text-muted-foreground">
               {[
                 "About Us",
                 "Leadership Team",
@@ -109,7 +109,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h4 className="text-base font-medium mb-6 tracking-wide">Resources</h4>
-            <ul className="space-y-3 text-gray-300">
+            <ul className="space-y-3 text-muted-foreground dark:text-muted-foreground">
               {[
                 "Legal Insights Blog",
                 "Whitepapers",
@@ -139,7 +139,7 @@ export default function Footer() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-xl font-light mb-3 tracking-tight">Legal Intelligence Newsletter</h3>
-              <p className="text-gray-300 font-light">Exclusive insights on legal trends and strategic guidance.</p>
+              <p className="text-muted-foreground dark:text-muted-foreground font-light">Exclusive insights on legal trends and strategic guidance.</p>
             </div>
             <div className="flex gap-4">
               <Input
@@ -156,10 +156,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="text-gray-400 text-xs font-light">
-            © 2024 LegalConsult Pro. All rights reserved. Attorney advertising material.
+          <div className="text-muted-foreground dark:text-muted-foreground text-xs font-light">
+            © 2024 Vidma Consulting Group LLP. All rights reserved. Attorney advertising material.
           </div>
-          <div className="flex space-x-6 text-xs text-gray-400">
+          <div className="flex space-x-6 text-xs text-muted-foreground dark:text-muted-foreground">
             {["Privacy Policy", "Terms of Service", "Bar Admissions", "Professional Conduct"].map((item) => (
               <a key={item} href="#" className="hover:text-bronze transition-colors font-light">
                 {item}

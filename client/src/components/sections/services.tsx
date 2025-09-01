@@ -79,7 +79,7 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="section-spacing bg-pure-white">
+    <section id="services" className="section-spacing bg-background dark:bg-background transition-colors duration-300">
       <div className="content-max-width mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -88,10 +88,10 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-6xl font-light text-charcoal mb-8 tracking-tight">
+          <h2 className="text-4xl lg:text-6xl font-light text-foreground dark:text-foreground mb-8 tracking-tight">
             Our <span className="font-normal">Services</span>
           </h2>
-          <p className="text-lg text-text-light max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-lg text-muted-foreground dark:text-muted-foreground max-w-2xl mx-auto font-light leading-relaxed">
             We simplify your legal and business processes with technology-enabled solutions.
           </p>
         </motion.div>
@@ -106,7 +106,7 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className="bg-pure-white border border-charcoal/5 rounded-3xl p-8 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 cursor-pointer group magnetic-hover"
+              className="bg-card dark:bg-card border border-border rounded-3xl p-8 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 cursor-pointer group magnetic-hover"
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.02,
@@ -131,7 +131,7 @@ export default function Services() {
               </motion.div>
               
               <motion.h3 
-                className="text-xl font-medium text-charcoal mb-4"
+                className="text-xl font-medium text-foreground dark:text-foreground mb-4"
                 whileHover={{ color: "rgb(184, 115, 51)" }}
                 transition={{ duration: 0.2 }}
               >
@@ -139,7 +139,7 @@ export default function Services() {
               </motion.h3>
               
               <motion.p 
-                className="text-text-light mb-6 font-light leading-relaxed"
+                className="text-muted-foreground dark:text-muted-foreground mb-6 font-light leading-relaxed"
                 initial={{ opacity: 0.7 }}
                 whileHover={{ opacity: 1 }}
               >
@@ -147,7 +147,7 @@ export default function Services() {
               </motion.p>
               
               <motion.div
-                className="flex items-center text-charcoal font-light hover:text-bronze transition-colors group-hover:translate-x-2"
+                className="flex items-center text-foreground dark:text-foreground font-light hover:text-bronze transition-colors group-hover:translate-x-2"
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
@@ -170,9 +170,9 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="bg-soft-grey rounded-3xl p-12 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-light text-charcoal mb-4 tracking-tight">Ready to Get Started?</h3>
-            <p className="text-text-light mb-8 font-light leading-relaxed max-w-2xl mx-auto">Each firm's situation and needs are unique. Tell us about what you're looking for, and we'll get back to you with solutions.</p>
+          <div className="bg-muted dark:bg-muted rounded-3xl p-12 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-light text-foreground dark:text-foreground mb-4 tracking-tight">Ready to Get Started?</h3>
+            <p className="text-muted-foreground dark:text-muted-foreground mb-8 font-light leading-relaxed max-w-2xl mx-auto">Each firm's situation and needs are unique. Tell us about what you're looking for, and we'll get back to you with solutions.</p>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button
                 onClick={scrollToContact}

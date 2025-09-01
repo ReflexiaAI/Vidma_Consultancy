@@ -47,7 +47,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
       {/* Clean Apple-inspired background with subtle animation */}
-      <div className="absolute inset-0 bg-pure-white" />
+      <div className="absolute inset-0 bg-background dark:bg-background transition-colors duration-300" />
 
       <motion.div 
         className="content-max-width mx-auto px-6 relative z-10"
@@ -62,7 +62,7 @@ export default function Hero() {
           >
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center bg-soft-grey border border-charcoal/10 rounded-full px-4 py-2 mb-8 magnetic-hover"
+              className="inline-flex items-center bg-muted dark:bg-muted border border-border rounded-full px-4 py-2 mb-8 magnetic-hover"
               whileHover={{ scale: 1.05, backgroundColor: "rgba(184, 115, 51, 0.1)" }}
             >
               <motion.div
@@ -72,11 +72,11 @@ export default function Hero() {
               >
                 <Sparkles className="w-4 h-4 text-bronze" />
               </motion.div>
-              <span className="text-charcoal font-normal text-sm tracking-wide">Next Generation Technology Enabled Legal Consultancy</span>
+              <span className="text-foreground dark:text-foreground font-normal text-sm tracking-wide">Next Generation Technology Enabled Legal Consultancy</span>
             </motion.div>
 
             <motion.h1
-              className="text-5xl lg:text-7xl font-light text-charcoal leading-tight tracking-tight"
+              className="text-5xl lg:text-7xl font-light text-foreground dark:text-foreground leading-tight tracking-tight"
               variants={itemVariants}
             >
               <motion.span
@@ -102,7 +102,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-lg text-text-light leading-relaxed font-light max-w-lg"
+              className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed font-light max-w-lg"
               variants={itemVariants}
             >
               <motion.span
@@ -168,7 +168,7 @@ export default function Hero() {
 
             {/* Stats */}
             <motion.div
-              className="grid grid-cols-3 gap-8 pt-16 border-t border-charcoal/5 mt-16"
+              className="grid grid-cols-3 gap-8 pt-16 border-t border-border mt-16"
               variants={itemVariants}
             >
               {[
@@ -193,12 +193,12 @@ export default function Hero() {
                   }}
                 >
                   <motion.div 
-                    className="text-2xl font-light text-charcoal"
+                    className="text-2xl font-light text-foreground dark:text-foreground"
                     whileHover={{ scale: 1.05 }}
                   >
                     {stat.value}
                   </motion.div>
-                  <div className="text-xs text-text-light tracking-wide uppercase">{stat.label}</div>
+                  <div className="text-xs text-muted-foreground dark:text-muted-foreground tracking-wide uppercase">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -227,7 +227,7 @@ export default function Hero() {
 
             {/* Floating achievement card */}
             <motion.div
-              className="absolute -bottom-8 -left-8 glass-effect rounded-2xl p-6 border border-charcoal/5"
+              className="absolute -bottom-8 -left-8 bg-card dark:bg-card border border-border rounded-2xl p-6 backdrop-blur-md"
               initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
               animate={{ 
                 opacity: 1, 
@@ -256,13 +256,13 @@ export default function Hero() {
                 </motion.div>
                 <div>
                   <motion.div 
-                    className="font-medium text-charcoal text-sm"
+                    className="font-medium text-foreground dark:text-foreground text-sm"
                     animate={{ color: ["#333", "#B87333", "#333"] }}
                     transition={{ duration: 3, repeat: Infinity }}
                   >
                     Industry Leader
                   </motion.div>
-                  <div className="text-xs text-text-light">Top Legal Consultancy 2024</div>
+                  <div className="text-xs text-muted-foreground dark:text-muted-foreground">Top Legal Consultancy 2024</div>
                 </div>
               </div>
             </motion.div>
