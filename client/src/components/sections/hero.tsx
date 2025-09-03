@@ -3,6 +3,7 @@ import { Shield, Users, Zap, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import vidmaLogo from "@/assets/vidma-logo.png";
+import vidmaMainLogo from "@assets/image_1756917535612.png";
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -51,7 +52,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/90 to-charcoal/80" />
       <div className="absolute inset-0 opacity-10">
         <img 
-          src={vidmaLogo} 
+          src={vidmaMainLogo} 
           alt="Background" 
           className="w-full h-full object-cover object-center opacity-20" 
         />
