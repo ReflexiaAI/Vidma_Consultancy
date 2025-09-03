@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Scale, Linkedin, Twitter, Youtube } from "lucide-react";
+import { Linkedin, Twitter, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import vidmaLogo from "@/assets/vidma-logo.png";
 
 export default function Footer() {
   return (
@@ -15,10 +16,12 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-bronze rounded-xl flex items-center justify-center">
-                <Scale className="text-white text-lg" />
-              </div>
+            <div className="flex items-center space-x-3 mb-6">
+              <img 
+                src={vidmaLogo} 
+                alt="Vidma Consulting Group" 
+                className="h-8 w-auto"
+              />
               <span className="text-xl font-medium tracking-tight">Vidma Consulting Group</span>
             </div>
             <p className="text-muted-foreground dark:text-muted-foreground mb-8 leading-relaxed font-light">

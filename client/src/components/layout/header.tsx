@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Scale, Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { Link, useLocation } from "wouter";
+import vidmaLogo from "@/assets/vidma-logo.png";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,10 +59,12 @@ export default function Header() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <div className="w-8 h-8 bg-charcoal rounded-md flex items-center justify-center">
-              <Scale className="text-white text-lg" />
-            </div>
-            <span className="text-xl font-medium text-foreground dark:text-foreground tracking-tight">Vidma Consulting Group</span>
+            <img 
+              src={vidmaLogo} 
+              alt="Vidma Consulting Group" 
+              className="h-8 w-auto"
+            />
+            <span className="text-xl font-medium text-foreground dark:text-foreground tracking-tight ml-2">Vidma Consulting Group</span>
           </motion.div>
 
           {/* Desktop Navigation */}

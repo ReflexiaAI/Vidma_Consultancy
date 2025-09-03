@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Calendar, Play, Trophy, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import vidmaLogo from "@/assets/vidma-logo.png";
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -215,15 +216,26 @@ export default function Hero() {
               stiffness: 100
             }}
           >
-            <motion.img
-              src="https://images.unsplash.com/photo-1556484687-30636164638b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-              alt="Professional legal consultation meeting"
-              className="rounded-3xl w-full shadow-sm animate-float"
+            <motion.div
+              className="flex items-center justify-center p-12 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 rounded-3xl shadow-sm animate-float"
               whileHover={{ 
                 scale: 1.02,
                 transition: { type: "spring", stiffness: 300 }
               }}
-            />
+            >
+              <motion.img
+                src={vidmaLogo}
+                alt="Vidma Consulting Group Logo"
+                className="w-full max-w-md h-auto"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                whileHover={{ 
+                  scale: 1.05,
+                  transition: { type: "spring", stiffness: 300 }
+                }}
+              />
+            </motion.div>
 
             {/* Floating achievement card */}
             <motion.div

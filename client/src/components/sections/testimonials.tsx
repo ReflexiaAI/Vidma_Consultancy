@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, User } from "lucide-react";
 
 const testimonials = [
   {
@@ -69,12 +69,12 @@ export default function Testimonials() {
               </div>
               <p className="text-gray-200 mb-6 font-light leading-relaxed">"{testimonial.content}"</p>
               <div className="flex items-center">
-                <motion.img
-                  src={testimonial.image}
-                  alt={`${testimonial.author} - ${testimonial.title}`}
-                  className="w-10 h-10 rounded-full mr-4 object-cover"
-                  whileHover={{ scale: 1.05 }}
-                />
+                <motion.div
+                  className="w-10 h-10 rounded-full mr-4 bg-white/10 flex items-center justify-center relative overflow-hidden"
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(184, 115, 51, 0.3)" }}
+                >
+                  <User className="w-5 h-5 text-white" />
+                </motion.div>
                 <div>
                   <div className="font-medium text-sm">{testimonial.author}</div>
                   <div className="text-gray-400 text-xs">{testimonial.title}</div>

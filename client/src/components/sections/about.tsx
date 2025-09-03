@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Check, Rocket, Sparkles, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
+import vidmaLogo from "@/assets/vidma-logo.png";
 
 const achievements = [
   {
@@ -159,13 +160,25 @@ export default function About() {
             transition={{ duration: 1.2, type: "spring", stiffness: 100 }}
             viewport={{ once: true }}
           >
-            <motion.img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-              alt="Modern office building representing business growth"
-              className="rounded-3xl w-full shadow-sm"
+            <motion.div
+              className="flex items-center justify-center p-8 bg-gradient-to-br from-bronze/5 to-bronze/10 dark:from-bronze/10 dark:to-bronze/20 rounded-3xl shadow-sm"
               whileHover={{ scale: 1.01 }}
               transition={{ type: "spring", stiffness: 300 }}
-            />
+            >
+              <motion.img
+                src={vidmaLogo}
+                alt="Vidma Consulting Group - About Us"
+                className="w-full max-w-sm h-auto opacity-60"
+                initial={{ opacity: 0, rotate: -5 }}
+                whileInView={{ opacity: 0.6, rotate: 0 }}
+                transition={{ duration: 1, delay: 0.3 }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  opacity: 0.8,
+                  transition: { type: "spring", stiffness: 300 }
+                }}
+              />
+            </motion.div>
 
             {/* Growth metrics overlay */}
             <motion.div
