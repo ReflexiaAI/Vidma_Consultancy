@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { Calendar, Play, Trophy, Sparkles } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Shield, Users, Zap, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import vidmaLogo from "@/assets/vidma-logo.png";
@@ -47,239 +47,129 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
-      {/* Clean Apple-inspired background with subtle animation */}
-      <div className="absolute inset-0 bg-background dark:bg-background transition-colors duration-300" />
+      {/* Hero background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/90 to-charcoal/80" />
+      <div className="absolute inset-0 opacity-10">
+        <img 
+          src={vidmaLogo} 
+          alt="Background" 
+          className="w-full h-full object-cover object-center opacity-20" 
+        />
+      </div>
 
       <motion.div 
-        className="content-max-width mx-auto px-6 relative z-10"
+        className="content-max-width mx-auto px-6 relative z-10 text-center"
         style={{ y, opacity }}
       >
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <motion.div
+          className="space-y-12"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isLoaded ? "visible" : "hidden"}
+        >
+          {/* Main heading */}
+          <motion.h1
+            className="text-5xl lg:text-7xl font-light text-white leading-tight tracking-tight"
+            variants={itemVariants}
+          >
+            <motion.span
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              Vidma Consulting Group LLP
+            </motion.span>
+          </motion.h1>
+
+          {/* Tagline */}
+          <motion.p
+            className="text-xl lg:text-2xl text-bronze font-light leading-relaxed max-w-4xl mx-auto"
+            variants={itemVariants}
+          >
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              A Next Generation Technology Enabled Legal And Business Consultancy
+            </motion.span>
+          </motion.p>
+
+          {/* CTA Button */}
           <motion.div
-            className="space-y-8"
+            className="flex justify-center mt-12"
+            variants={itemVariants}
+          >
+            <motion.div 
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button
+                onClick={scrollToContact}
+                className="bg-bronze hover:bg-bronze/90 text-white px-10 py-4 rounded-lg text-lg font-medium transition-all duration-300"
+                size="lg"
+              >
+                <Calendar size={20} className="mr-3" />
+                Get Started Today
+              </Button>
+            </motion.div>
+          </motion.div>
+
+          {/* Feature Cards */}
+          <motion.div
+            className="grid md:grid-cols-3 gap-8 mt-20"
             variants={containerVariants}
             initial="hidden"
             animate={isLoaded ? "visible" : "hidden"}
           >
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center bg-muted dark:bg-muted border border-border rounded-full px-4 py-2 mb-8 magnetic-hover"
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(184, 115, 51, 0.1)" }}
-            >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="mr-2"
-              >
-                <Sparkles className="w-4 h-4 text-bronze" />
-              </motion.div>
-              <span className="text-foreground dark:text-foreground font-normal text-sm tracking-wide">Next Generation Technology Enabled Legal Consultancy</span>
-            </motion.div>
-
-            <motion.h1
-              className="text-5xl lg:text-7xl font-light text-foreground dark:text-foreground leading-tight tracking-tight"
-              variants={itemVariants}
-            >
-              <motion.span
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-              >
-                Vidma Consulting
-              </motion.span>
-              <br />
-              <motion.span 
-                className="text-bronze font-normal"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-                whileHover={{ 
-                  scale: 1.05,
-                  transition: { type: "spring", stiffness: 300 }
-                }}
-              >
-                Group LLP
-              </motion.span>
-            </motion.h1>
-
-            <motion.p
-              className="text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed font-light max-w-lg"
-              variants={itemVariants}
-            >
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.8 }}
-              >
-                A next generation technology-enabled legal and business consultancy providing specialized services in contract management, intellectual property protection, compliance support, and strategic legal advisory.
-              </motion.span>
-            </motion.p>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 mt-12"
-              variants={itemVariants}
-            >
-              <motion.div 
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
-                }} 
-                whileTap={{ scale: 0.95 }}
-                className="magnetic-hover"
-              >
-                <Button
-                  onClick={scrollToContact}
-                  className="bg-charcoal hover:bg-charcoal/90 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 animate-pulse-glow"
-                  size="lg"
-                >
-                  <motion.div
-                    animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="mr-2"
-                  >
-                    <Calendar size={18} />
-                  </motion.div>
-                  Get Started Today
-                </Button>
-              </motion.div>
-              <motion.div 
-                whileHover={{ 
-                  scale: 1.05,
-                  backgroundColor: "rgba(31, 41, 55, 1)",
-                  color: "white"
-                }} 
-                whileTap={{ scale: 0.95 }}
-                className="magnetic-hover"
-              >
-                <Button
-                  variant="outline"
-                  className="border border-charcoal/20 text-charcoal hover:bg-charcoal hover:text-white px-8 py-3 rounded-xl font-medium transition-all duration-300"
-                  size="lg"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.2 }}
-                    className="mr-2"
-                  >
-                    <Play size={18} />
-                  </motion.div>
-                  Learn More
-                </Button>
-              </motion.div>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              className="grid grid-cols-3 gap-8 pt-16 border-t border-border mt-16"
-              variants={itemVariants}
-            >
-              {[
-                { value: "Client", label: "Centric Focus" },
-                { value: "Secure", label: "Protocols" },
-                { value: "Efficient", label: "Processes" },
-              ].map((stat, index) => (
+            {[
+              {
+                title: "CLIENT CENTRIC",
+                description: "Our focus is on the clients, their work culture and implementing technology in legal and financial services.",
+                icon: Users
+              },
+              {
+                title: "EFFICIENT PROCESSES", 
+                description: "We innovate and implement intelligent use of processes and technology to arrive at the full circle of projects.",
+                icon: Zap
+              },
+              {
+                title: "SECURE PROTOCOLS",
+                description: "Our policies strictly adhere to industry best practice for Information Security. We have efficient IS protocols, processes and practices in place.",
+                icon: Shield
+              }
+            ].map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
                 <motion.div
-                  key={stat.label}
-                  className="text-center magnetic-hover"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
-                    delay: 1.4 + index * 0.2, 
-                    duration: 0.6,
-                    type: "spring",
-                    stiffness: 150
-                  }}
+                  key={feature.title}
+                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 text-center"
+                  variants={itemVariants}
                   whileHover={{ 
-                    scale: 1.1,
-                    color: "rgb(184, 115, 51)"
+                    scale: 1.02,
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    borderColor: "rgba(184, 115, 51, 0.3)"
                   }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <motion.div 
-                    className="text-2xl font-light text-foreground dark:text-foreground"
-                    whileHover={{ scale: 1.05 }}
+                  <motion.div
+                    className="w-16 h-16 bg-bronze/20 rounded-full flex items-center justify-center mx-auto mb-6"
+                    whileHover={{ scale: 1.1, backgroundColor: "rgba(184, 115, 51, 0.3)" }}
                   >
-                    {stat.value}
+                    <IconComponent className="w-8 h-8 text-bronze" />
                   </motion.div>
-                  <div className="text-xs text-muted-foreground dark:text-muted-foreground tracking-wide uppercase">{stat.label}</div>
+                  <h3 className="text-lg font-medium text-bronze mb-4 tracking-wide">
+                    {feature.title}
+                  </h3>
+                  <p className="text-white/80 leading-relaxed font-light">
+                    {feature.description}
+                  </p>
                 </motion.div>
-              ))}
-            </motion.div>
+              );
+            })}
           </motion.div>
+        </motion.div>
 
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0.8, rotateY: 45 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ 
-              duration: 1.2, 
-              delay: 0.5,
-              type: "spring",
-              stiffness: 100
-            }}
-          >
-            <motion.div
-              className="flex items-center justify-center p-12 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 rounded-3xl shadow-sm animate-float"
-              whileHover={{ 
-                scale: 1.02,
-                transition: { type: "spring", stiffness: 300 }
-              }}
-            >
-              <motion.img
-                src={vidmaLogo}
-                alt="Vidma Consulting Group Logo"
-                className="w-full max-w-md h-auto"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                whileHover={{ 
-                  scale: 1.05,
-                  transition: { type: "spring", stiffness: 300 }
-                }}
-              />
-            </motion.div>
-
-            {/* Floating achievement card */}
-            <motion.div
-              className="absolute -bottom-8 -left-8 bg-card dark:bg-card border border-border rounded-2xl p-6 backdrop-blur-md"
-              initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-              animate={{ 
-                opacity: 1, 
-                scale: 1, 
-                rotate: 0,
-                y: [0, -5, 0]
-              }}
-              transition={{ 
-                delay: 1.5, 
-                duration: 0.8,
-                y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-              }}
-              whileHover={{ 
-                scale: 1.05,
-                rotate: 2,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
-              }}
-            >
-              <div className="flex items-center space-x-4">
-                <motion.div 
-                  className="w-10 h-10 bg-charcoal rounded-xl flex items-center justify-center"
-                  animate={{ rotate: [0, 360] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                >
-                  <Trophy className="text-white text-lg" />
-                </motion.div>
-                <div>
-                  <motion.div 
-                    className="font-medium text-foreground dark:text-foreground text-sm"
-                    animate={{ color: ["#333", "#B87333", "#333"] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  >
-                    Industry Leader
-                  </motion.div>
-                  <div className="text-xs text-muted-foreground dark:text-muted-foreground">Top Legal Consultancy 2024</div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
       </motion.div>
       
     </section>
