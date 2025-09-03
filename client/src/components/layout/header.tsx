@@ -3,11 +3,13 @@ import { motion } from "framer-motion";
 import { Scale, Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
+import { Link, useLocation } from "wouter";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const [location, navigate] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +25,20 @@ export default function Header() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
+    }
+  };
+
+  const handleNavigation = (type: string, value: string) => {
+    setIsMobileMenuOpen(false);
+    if (type === 'scroll') {
+      if (location !== '/') {
+        navigate('/');
+        setTimeout(() => scrollToSection(value), 100);
+      } else {
+        scrollToSection(value);
+      }
+    } else {
+      navigate(value);
     }
   };
 
@@ -51,15 +67,16 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {[
-              { name: "Home", id: "home" },
-              { name: "Services", id: "services" },
-              { name: "About", id: "about" },
-              { name: "Team", id: "team" },
-              { name: "Contact", id: "contact" },
+              { name: "Home", type: "scroll", value: "home" },
+              { name: "Services", type: "scroll", value: "services" },
+              { name: "About", type: "scroll", value: "about" },
+              { name: "Team", type: "scroll", value: "team" },
+              { name: "Blog", type: "route", value: "/blog" },
+              { name: "Contact", type: "scroll", value: "contact" },
             ].map((item) => (
               <motion.button
                 key={item.name}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavigation(item.type, item.value)}
                 className="text-foreground dark:text-foreground hover:text-bronze transition-colors duration-200 font-normal text-sm tracking-wide"
                 whileHover={{ y: -2 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -89,7 +106,7 @@ export default function Header() {
               whileTap={{ scale: 0.95 }}
             >
               <Button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => handleNavigation('scroll', 'contact')}
                 className="bg-charcoal hover:bg-charcoal/90 text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all duration-200"
                 data-testid="button-schedule-consultation"
               >
@@ -134,22 +151,23 @@ export default function Header() {
           >
             <div className="flex flex-col space-y-4">
               {[
-                { name: "Home", id: "home" },
-                { name: "Services", id: "services" },
-                { name: "About", id: "about" },
-                { name: "Team", id: "team" },
-                { name: "Contact", id: "contact" },
+                { name: "Home", type: "scroll", value: "home" },
+                { name: "Services", type: "scroll", value: "services" },
+                { name: "About", type: "scroll", value: "about" },
+                { name: "Team", type: "scroll", value: "team" },
+                { name: "Blog", type: "route", value: "/blog" },
+                { name: "Contact", type: "scroll", value: "contact" },
               ].map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleNavigation(item.type, item.value)}
                   className="text-foreground dark:text-foreground hover:text-bronze transition-colors duration-300 text-left"
                 >
                   {item.name}
                 </button>
               ))}
               <Button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => handleNavigation('scroll', 'contact')}
                 className="bg-bronze hover:bg-bronze-hover text-white px-6 py-3 rounded-lg font-semibold mt-4"
               >
                 Schedule Consultation
