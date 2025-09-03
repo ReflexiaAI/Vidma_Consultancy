@@ -49,11 +49,11 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
       {/* Hero background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90 dark:from-charcoal dark:via-charcoal/90 dark:to-charcoal/80" />
-      <div className="absolute inset-0 opacity-5 dark:opacity-10">
+      <div className="absolute inset-0 opacity-15 dark:opacity-10">
         <img 
           src={vidmaLogo} 
           alt="Background" 
-          className="w-full h-full object-cover object-center opacity-10 dark:opacity-20" 
+          className="w-full h-full object-cover object-center opacity-30 dark:opacity-20" 
         />
       </div>
 
