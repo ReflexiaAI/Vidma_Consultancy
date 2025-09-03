@@ -100,7 +100,7 @@ export default function Team() {
           viewport={{ once: true }}
         >
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-            <Button className="bg-charcoal hover:bg-charcoal/90 text-white px-8 py-3 rounded-2xl font-medium transition-all duration-200">
+            <Button className="bg-foreground hover:bg-foreground/90 text-background dark:bg-charcoal dark:hover:bg-charcoal/90 dark:text-white px-8 py-3 rounded-2xl font-medium transition-all duration-200">
               View Full Team
             </Button>
           </motion.div>

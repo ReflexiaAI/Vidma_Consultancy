@@ -48,12 +48,12 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
       {/* Hero background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/90 to-charcoal/80" />
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90 dark:from-charcoal dark:via-charcoal/90 dark:to-charcoal/80" />
+      <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <img 
           src={vidmaLogo} 
           alt="Background" 
-          className="w-full h-full object-cover object-center opacity-20" 
+          className="w-full h-full object-cover object-center opacity-10 dark:opacity-20" 
         />
       </div>
 
@@ -69,7 +69,7 @@ export default function Hero() {
         >
           {/* Main heading */}
           <motion.h1
-            className="text-5xl lg:text-7xl font-light text-white leading-tight tracking-tight"
+            className="text-5xl lg:text-7xl font-light text-foreground dark:text-white leading-tight tracking-tight"
             variants={itemVariants}
           >
             <motion.span
@@ -83,7 +83,7 @@ export default function Hero() {
 
           {/* Tagline */}
           <motion.p
-            className="text-xl lg:text-2xl text-bronze font-light leading-relaxed max-w-4xl mx-auto"
+            className="text-xl lg:text-2xl text-bronze dark:text-bronze font-light leading-relaxed max-w-4xl mx-auto"
             variants={itemVariants}
           >
             <motion.span
@@ -143,7 +143,7 @@ export default function Hero() {
               return (
                 <motion.div
                   key={feature.title}
-                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 text-center"
+                  className="bg-card dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-border dark:border-white/10 text-center"
                   variants={itemVariants}
                   whileHover={{ 
                     scale: 1.02,
@@ -153,15 +153,15 @@ export default function Hero() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <motion.div
-                    className="w-16 h-16 bg-bronze/20 rounded-full flex items-center justify-center mx-auto mb-6"
+                    className="w-16 h-16 bg-bronze/20 dark:bg-bronze/20 rounded-full flex items-center justify-center mx-auto mb-6"
                     whileHover={{ scale: 1.1, backgroundColor: "rgba(184, 115, 51, 0.3)" }}
                   >
-                    <IconComponent className="w-8 h-8 text-bronze" />
+                    <IconComponent className="w-8 h-8 text-bronze dark:text-bronze" />
                   </motion.div>
-                  <h3 className="text-lg font-medium text-bronze mb-4 tracking-wide">
+                  <h3 className="text-lg font-medium text-bronze dark:text-bronze mb-4 tracking-wide">
                     {feature.title}
                   </h3>
-                  <p className="text-white/80 leading-relaxed font-light">
+                  <p className="text-foreground/80 dark:text-white/80 leading-relaxed font-light">
                     {feature.description}
                   </p>
                 </motion.div>
