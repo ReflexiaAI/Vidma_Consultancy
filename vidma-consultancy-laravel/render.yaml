@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: vidma-consultancy
+    env: php
+    plan: free
+    autoDeploy: true
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+      php -r "file_exists('.env') || copy('.env.example', '.env');"
+      php artisan key:generate --force
+      npm ci
+      npm run build
+      php artisan config:cache
+      php artisan route:cache
+      php artisan view:cache
+      # Create SQLite database file on first deploy if using SQLite
+      mkdir -p /var/data
+      if [ ! -f /var/data/database.sqlite ]; then touch /var/data/database.sqlite; fi
+      # Run migrations (ignore failure on initial empty DB)
+      php artisan migrate --force || true
+    startCommand: vendor/bin/heroku-php-apache2 public/
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        sync: false
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: /var/data/database.sqlite
+    disk:
+      name: appdata
+      mountPath: /var/data
+      sizeGB: 1
